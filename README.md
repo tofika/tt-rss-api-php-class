@@ -25,4 +25,5 @@ if( isset( $feeds['content'][0]['id'])) {
 ```
 
 Copyright (c) 2013 Anatoliy Kultenko "tofik".
+
 Released under the BSD License, see http://opensource.org/licenses/BSD-3-Clause
