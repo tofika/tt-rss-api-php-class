@@ -128,6 +128,16 @@ class TTRSSAPI
             return $tarray;
         } else return false;
     }
+    public function updateFeed($feed_id)
+	{
+		$params = array( "sid" => $this -> t_session_id, "op" => "updateFeed", "feed_id" => $feed_id);
+        $params = json_encode( $params);
+        $response = $this -> t_api_query( $this->t_api_url, $params);
+        if ( $response['code'] == 200) {
+            $tarray = json_decode( $response['text'], true);
+            return $tarray;
+        } else return false;	
+	}
 
 }
 
