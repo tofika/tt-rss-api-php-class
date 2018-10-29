@@ -117,7 +117,7 @@ class TTRSSAPI
     {
         $params = array( "sid" => $this -> t_session_id, "op" => "getHeadlines", "feed_id" => $feed_id, "limit" => $limit, "is_cat" => $is_cat,
                         "show_excerpt" => $show_excerpt, "show_content" => $show_content, "view_mode" => $view_mode, "order_by" => $order_by,
-                        "include_nested" => 'true', "skip" => $page);
+                        "include_nested" => 'true', "skip" => ($page - 1));
         $params = json_encode( $params);
         $response = $this -> t_api_query( $this->t_api_url, $params);
         if ( $response['code'] == 200) {
